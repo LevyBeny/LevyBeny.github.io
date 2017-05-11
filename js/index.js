@@ -170,6 +170,7 @@ $(function () {
       users[users.length] = userToAdd;
       activeUser = userToAdd;
       $("#label_user").text("Hi " + activeUser.userName);
+      $("#button_logOut").css("visibility", "visible");
       changeView('div_welcomeGame');
       form.submit();
     }
@@ -870,6 +871,34 @@ function restart_click() {
   audio.pause();
   Init_Board();
 }
+
+function register_click(){
+  if (activeUser!=null){
+    alert("Need to log out first!")
+  }
+  else{
+    changeView('div_register');
+  }
+}
+
+function login_click(){
+  if (activeUser!=null){
+    alert("Allready logged in!")
+  }
+  else{
+    changeView('div_login');
+  }
+}
+
+function welcome_click(){
+  if (activeUser!=null){
+    alert("Need to log out first!")
+  }
+  else{
+    changeView('div_welcome');
+  }
+}
+
 
 /* Draw functions *************************************************************************************/
 

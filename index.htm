@@ -7,7 +7,6 @@
 
     <link href="https://fonts.googleapis.com/css?family=Baloo|Eagle+Lake|Raleway|Love+Ya+Like+A+Sister|Montserrat:900" rel="stylesheet">
     <meta charset="UTF-8">
-    <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     <script type="text/javascript" src="js/jquery-3.2.0.min.js"></script>
     <script type="text/javascript" src="js/jquery.validate.min.js"></script>
@@ -28,9 +27,9 @@
 
     <section id="section_view">
         <div id="div_menu">
-            <button id="button_menuPlay" class="buttons_menu" onclick="changeView('div_welcome')">Welcome</button>
-            <button id="button_menuRegister" class="buttons_menu" onclick="changeView('div_register')">Register</button>
-            <button id="button_menuLogin" class="buttons_menu" onclick="changeView('div_login')">Login</button>
+            <button id="button_menuPlay" class="buttons_menu" onclick="welcome_click()">Welcome</button>
+            <button id="button_menuRegister" class="buttons_menu" onclick="register_click()">Register</button>
+            <button id="button_menuLogin" class="buttons_menu" onclick="login_click()">Login</button>
             <button id="button_menuAbout" class="buttons_menu" onclick="openAbout()">About</button>
         </div>
 
@@ -113,7 +112,7 @@
                 <select name="wall" id="wall">
                     <option value="green">green</option>
                     <option value="red">red</option>
-                    <option value="light blue">light blue</option>
+                    <option value="lightblue">light blue</option>
                     <option value="gold">gold</option>
                 </select>
             </div>
