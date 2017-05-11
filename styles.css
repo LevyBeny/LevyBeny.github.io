@@ -304,8 +304,9 @@ top:80%;
     position: absolute;
     background: transparent;
     border: none;
-left:5%;
-top:90%;
+    visibility: hidden;
+    left: 11%;
+    top:21%;
 }
 
 #button_logOut:hover{

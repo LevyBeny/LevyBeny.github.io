@@ -203,6 +203,7 @@ function login() {
   //wrong password
   activeUser = users[index - 1];
   $("#label_user").text("Hi " + activeUser.userName);
+  $("#button_logOut").css("visibility", "visible");
   changeView('div_welcomeGame');
 }
 
@@ -210,6 +211,7 @@ function login() {
 /* GAME *****************************************************************************************************/
 
 /******** Global  ********/
+var isGame = false;
 var board = [];
 var ctx = canvas.getContext("2d");
 var interval;
@@ -257,6 +259,7 @@ function continueGame() {
 }
 
 function Init_Board() {
+  isGame = true;
   score = 0;
   game_time = total_time;
   //set values
@@ -864,6 +867,7 @@ function restart_click() {
     life_x.parentNode.removeChild(life_x);
     lives--;
   }
+  audio.pause();
   Init_Board();
 }
 
@@ -1228,14 +1232,18 @@ function startGame(points, monsters, time, wall) {
 }
 
 function logout() {
-  audio.pause();
-  window.clearInterval(interval);
-  while (lives > 0) {
-    var life_id = 'life' + lives + '';
-    var life_x = document.getElementById(life_id);
-    life_x.parentNode.removeChild(life_x);
-    lives--;
+  if (isGame) {
+    audio.pause();
+    window.clearInterval(interval);
+    while (lives > 0) {
+      var life_id = 'life' + lives + '';
+      var life_x = document.getElementById(life_id);
+      life_x.parentNode.removeChild(life_x);
+      lives--;
+    }
   }
+  $("#button_logOut").css("visibility", "hidden");
+  isGame=false;
   activeUser = null;
   $("#label_user").text("");
   changeView('div_welcome');
